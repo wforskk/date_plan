@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:date_plan/screen/detail_screen.dart';
 
 class SearchScreen extends StatefulWidget {
-
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
@@ -9,6 +9,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final _controller = TextEditingController();
   final int maxLength = 10;
+  var contextLocal;
 
   var _gridData = <Widget>[
     Container(
@@ -30,12 +31,13 @@ class _SearchScreenState extends State<SearchScreen> {
   ];
 
   void initState() {
+    contextLocal = null;
     _controller.addListener(() {
       final text = _controller.text.toLowerCase();
       _controller.value = _controller.value.copyWith(
         text: text,
         selection:
-        TextSelection(baseOffset: text.length, extentOffset: text.length),
+            TextSelection(baseOffset: text.length, extentOffset: text.length),
         composing: TextRange.empty,
       );
     });
@@ -48,6 +50,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Widget build(BuildContext context) {
+    contextLocal = context;
     var deviceData = MediaQuery.of(context); //デバイスの情報を取得
     var deviceHeight = deviceData.size.height; //デバイスの高さを取得
     return Scaffold(
@@ -75,7 +78,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         child: TextField(
                           //controller: _controller,
                           decoration:
-                          InputDecoration(border: OutlineInputBorder()),
+                              InputDecoration(border: OutlineInputBorder()),
                           //maxLength: maxLength,
                           //maxLengthEnforced: true,
                           //expands: true,
@@ -106,10 +109,80 @@ class _SearchScreenState extends State<SearchScreen> {
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 10.0,
                 padding: const EdgeInsets.all(10.0),
-                children: _gridData,
+                children: <Widget>[
+                  Container(
+                    child: Hero(
+                      tag: 'date',
+                      child: RaisedButton(
+                        color: Colors.blue[100],
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              child: Image.asset(
+                                'images/autumn3.jpg',
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "タイトル",
+                                style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "Roboto"),
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            contextLocal,
+                            MaterialPageRoute(
+                                builder: (context) => DetailScreen()),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Hero(
+                      tag: 'date2',
+                      child: RaisedButton(
+                        color: Colors.blue[100],
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              child: Image.asset(
+                                'images/bridg.jpg',
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "タイトル",
+                                style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "Roboto"),
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            contextLocal,
+                            MaterialPageRoute(
+                                builder: (context) => DetailScreen()),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ]),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+      ),
     );
   }
 
