@@ -21,26 +21,45 @@ class _DetailScreenState extends State<DetailScreen> {
       body: Column(
         children: <Widget>[
           Hero(
-            tag: 'date',
-            child:
-            Container(
+            tag: 'date4',
+            child: Container(
               child: Image.asset(
-                'images/autumn3.jpg',
+                'images/image1.jpg',
               ),
             ),
           ),
-          Container(
-            alignment: Alignment.topCenter,
-            child: Text(
-              "文章",
-              style: TextStyle(
-                  fontSize: 32.0, fontWeight: FontWeight.w400, fontFamily: "Roboto"),
+          SingleChildScrollView(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      "   水と生命の神秘に\nきらめくひとときを！\n「アクアパーク品川」",
+                      style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Roboto"),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      "都心にいながら楽しめるこの水族館は、まるで年中イルミネーションをみているかのようなライトアップと、"
+                      "遊園地のようなアトラクション、神秘的な生き物をみることができ、デートの雰囲気にぴったりです！"
+                      "お酒と共にまったりデートはいかがですか？",
+                      style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "Roboto"),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-
         ],
       ),
     );
   }
-
 }
