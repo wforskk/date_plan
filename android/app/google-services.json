@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "287504780894",
+    "firebase_url": "https://date-plan-987ae.firebaseio.com",
+    "project_id": "date-plan-987ae",
+    "storage_bucket": "date-plan-987ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287504780894:android:74441b41235b94d34a6ecf",
+        "android_client_info": {
+          "package_name": "com.example.date_plan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287504780894-9ob5mtcdm4iv4h98av9lq3oh3l0utqnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKTFEZzV4ZnTZHyvcY0uWqklnC18V7WL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287504780894-9ob5mtcdm4iv4h98av9lq3oh3l0utqnk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "287504780894-1clppj4plhqb9ojbmiho6g0qbpkhe2ce.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.datePlan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
